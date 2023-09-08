@@ -1,17 +1,25 @@
-/*Being by creating the grid. Create the squares using CSS,
-put the grid squares inside the container div. Create the grid
-with JS by creating a 16x16 div grid*/
-
-const container = document.getElementById('container')
-//make grid function
-function makeRows(rows, cols) {
-    container.style.setProperty('--grid-rows', rows)
-    container.style.setProperty('--grid-cols', cols)
-    for(c = 0; c < (rows * cols); c++) {
-        let cell = document.createElement("div")
-        cell.innerText = (c + 1)
-        container.appendChild(cell).className = 'grid-item'
+function makeGrid(number) {
+    const gridContainer = document.querySelector('.container')
+    gridContainer.style.gridTemplateColumns = `repeat(${number}, 1fr)`
+    gridContainer.style.gridTemplateRows = `repeat(${number}, 1fr)`
+    for (let i = 1; i <= number*number; i++) {
+        let div = document.createElement('div')
+        div.classList.add("grid-box")
+        gridContainer.appendChild(div)
     }
+    document.querySelector('.grid-dimensions').textContent = `${number}x${number}`
 }
-makeRows(16, 16)
 
+let gridNumber = 16
+makeGrid(gridNumber)
+let gridBoxList = document.querySelectorAll(".grid-box")
+gridBoxList.forEach(gridbox => {
+    gridbox.addEventListener("mouseover", changeColor)
+})
+
+function changeColor(event) {
+    event.target.style.backgroundColor = 'black'
+}
+
+//Add button functionality to reset grid and resize.
+//Maybe add ability to change to multicolour.
