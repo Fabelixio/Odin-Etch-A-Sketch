@@ -35,7 +35,7 @@ body {
 .grid-box {
     border: solid black 1px;
 }
-.clear-button, .reset-button {
+.clear-button, .reset-button, .multi-button, .black-button {
     border-radius: 8px;
     padding: 10px 20px;
     background-color: rgb(255, 94, 0);
@@ -46,16 +46,12 @@ body {
     text-decoration: none;
     box-shadow: 0 9px #999
 }
-.clear-button:active, .reset-button:active {
+.clear-button:active, .reset-button:active, .multi-button:active, .black-button:active {
     background-color: #3e8e41;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
-.clear-button:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-}
-.reset-button:hover {
+.clear-button:hover, .reset-button:hover, .multi-button:hover, .black-button:hover {
     background-color: #4CAF50; /* Green */
     color: white;
 }
