@@ -64,12 +64,14 @@ function multiColorPicker() {
 function changeColorMulti (event) {
     event.target.style.backgroundColor = multiColorPicker()
 }
-//When pressed return the colours back to default
+//When pressed rclear the grid
 
 function buttonClear() {
     let gridBoxList = document.querySelectorAll('.grid-box')
     gridBoxList.forEach((gridBox) => gridBox.style.backgroundColor = null)
 }
+// buttons and functionality
+
 const clearBTN = document.querySelector('.clear-button')
 clearBTN.addEventListener('click', buttonClear)
 
@@ -78,9 +80,3 @@ resetBTN.addEventListener('click', resetGrid)
 
 const multiBTN = document.querySelector('.multi-button')
 multiBTN.addEventListener('click', multiColor)
-
-const blackBTN = document.querySelector('.black-button')
-blackBTN.addEventListener('click', )
-
-//Maybe add ability to change to multicolour. add button for multicolour, link to DOM
-//add black button to change colour back to black
